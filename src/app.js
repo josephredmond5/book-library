@@ -6,4 +6,12 @@ app.use((req, res, next) => {
   next();
 });
 
+app.post('/readers', (req, res) => {
+  res.status(201).send('success');
+})
+
+const { createReader } = require('./models/reader');
+
+app.post('/readers', createReader);
+
 module.exports = app;
